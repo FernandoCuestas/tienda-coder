@@ -1,3 +1,4 @@
+import CartWidget from '../Cart/CartWidget';
 
 function NavBar() {
   return (
@@ -24,6 +25,9 @@ function NavBar() {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Efectivo 15%</a>
+                        </li>
+                        <li className="nav-item">
+                            <CartWidget/>
                         </li>
                     </ul>
                     

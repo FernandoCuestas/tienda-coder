@@ -1,11 +1,11 @@
 import NavBar from './components/NavBar/NavBar';
-import Remera from './assets/remera.png';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <>
       <NavBar/>
-      <img src={Remera} alt="Remera Jujutsu kaisen"/>
+      <ItemListContainer greeting="Bienvenido"/>
     </>
   )
 
