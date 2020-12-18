@@ -20,3 +20,36 @@ body{
 .navbar-toggler{
   border-color: #FFFFFF;
 }
+
+.qty {
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 0px 8px;
+}
+
+.qty button {
+  width: 20%;
+  border: none;
+  padding: 1rem;
+  outline: none;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 30px;
+  color: white;
+  font-size: 1rem;
+}
+
+.qty button:disabled {
+  background: #ddd;
+  cursor: no-drop;
+}
+
+.qty input {
+  width: 60%;
+  text-align: center;
+  border: none;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  outline: none;
+}
