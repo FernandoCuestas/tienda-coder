@@ -2,7 +2,7 @@ import FeaturedProducts from './FeaturedProducts/FeaturedProducts'
 
 const Home = () => {
     return (
-        <FeaturedProducts />
+        <FeaturedProducts greeting="Bienvenido"/>
     )
 }
 

@@ -1,43 +1,42 @@
+import Jujutsu from '../../../assets/jujutsu.png';
+import Naruto from '../../../assets/naruto.png';
+import Gantz from '../../../assets/gantz.png';
+import Item from '../../Item/Item';
 import {useState, useEffect} from 'react';
-import ProductCard from '../../general/ProductCard/ProductCard';
-import './FeaturedProducts.css';
 
-const FeaturedProducts = () => {
+function FeaturedProducts({greeting}){
     const [items, setItems] = useState([]);
-    // Hagan de cuenta que esta constante es una API
+
     const products = [
         {
             id: 1,
-            titulo: 'Producto 1',
-            precio: 500,
+            title: 'Jujutsu Kaisen',
+            img: Jujutsu,
         },
         {
             id: 2,
-            titulo: 'Producto 2',
-            precio: 300,
-        },
-        {
-            id: 3,
-            titulo: 'Producto 3',
-            precio: 600,
+            title: 'Naruto',
+            img: Naruto,
         },
         {
             id: 4,
-            titulo: 'Producto 4',
-            precio: 247,
+            title: 'Gantz',
+            img: Gantz,
         },
     ]
+
 
     const getProducts = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products);
-        }, 500)
+        }, 5000)
     })
 
     const getProducstFromDB = async () => {
         try {
             const result = await getProducts;
             setItems(result);
+            alert('Se cargaron los productos');
         } catch(error) {
             alert('No podemos mostrar los productos en este momento');
         }
@@ -48,37 +47,25 @@ const FeaturedProducts = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    // useEffect(() => {
-    //     getProducts.then(rta => setItems(rta));
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
+    return(
+        
+        <>
+            <h1 className="mt-4">{greeting}</h1>
+            <div className="row">
+            {
+                items.length ?
+                items.map((item, index) => (
+                    <div className="col-md-3 mb-4">
+                            <Item title={item.title} img={item.img}/>
+                    </div>
+                )): <p className="cargando">Cargando items...</p>
+            }
 
-    return (
-        <section className="featuredProducts">
-            <div className="container">
-                {
-                    items.length ?
-                    <>
-                        <h2>Productos destacados</h2>
 
-                        <ul>
-                            {
-                                items.map((item, index) => (
-                                    <li key={index}>
-                                        <ProductCard 
-                                            id={item.id}
-                                            titulo={item.titulo} 
-                                            precio={item.precio} 
-                                        />
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </> :
-                    <p className="cargando">Cargando items...</p>
-                }
             </div>
-        </section>
+            
+        </> 
+        
     )
 }
 
