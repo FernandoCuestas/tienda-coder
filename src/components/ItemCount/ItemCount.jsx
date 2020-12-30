@@ -27,7 +27,7 @@ function ItemCount({stock, initial, event}){
                 <input type="text" value={qty} readOnly/>
                 <button onClick={() => setQty(qty + 1)}>+</button>
             </div>
-            <div className="text-center">
+            <div className="text-center mb-4">
                 <button className="btn btn-success" onClick={onAdd}>Agregar al carrito</button>
             </div>
         </>

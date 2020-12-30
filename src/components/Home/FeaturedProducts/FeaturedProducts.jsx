@@ -12,16 +12,19 @@ function FeaturedProducts({greeting}){
             id: 1,
             title: 'Jujutsu Kaisen',
             img: Jujutsu,
+            price: 400
         },
         {
             id: 2,
             title: 'Naruto',
             img: Naruto,
+            price: 600
         },
         {
             id: 4,
             title: 'Gantz',
             img: Gantz,
+            price: 300
         },
     ]
 
@@ -50,19 +53,20 @@ function FeaturedProducts({greeting}){
     return(
         
         <>
-            <h1 className="mt-4">{greeting}</h1>
-            <div className="row">
-            {
-                items.length ?
-                items.map((item, index) => (
-                    <div className="col-md-3 mb-4">
-                            <Item title={item.title} img={item.img}/>
+                <div className="container">
+                    <h1 className="mt-4">{greeting}</h1>
+                    <div className="row">
+                    {
+                        items.length ?
+                        items.map((item, index) => (
+                            <div className="col-md-3 mb-4 mr-5">
+                                    <Item title={item.title} img={item.img} price={item.price}/>
+                            </div>
+                        )): <p className="cargando">Cargando items...</p>
+                    }
+
                     </div>
-                )): <p className="cargando">Cargando items...</p>
-            }
-
-
-            </div>
+                </div>
             
         </> 
         
