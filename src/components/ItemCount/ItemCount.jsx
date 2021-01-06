@@ -5,7 +5,7 @@ function ItemCount({stock, initial, event}){
 
     const handleClickResta = () => {
 
-        if(qty > 1) {
+        if(qty > 0) {
             setQty(qty - 1);
         }
 
@@ -19,7 +19,7 @@ function ItemCount({stock, initial, event}){
         <>
             <div className="qty">
                 <button 
-                    disabled={qty === 1 ? 'disabled' : null } 
+                    disabled={qty === 0 ? 'disabled' : null } 
                     onClick={handleClickResta}
                 >
                     -
@@ -28,7 +28,7 @@ function ItemCount({stock, initial, event}){
                 <button onClick={() => setQty(qty + 1)}>+</button>
             </div>
             <div className="text-center mb-4">
-                <button className="btn btn-success" onClick={onAdd}>Agregar al carrito</button>
+                <button className={qty === 0 ? 'd-none' : 'btn btn-success d-block'} onClick={onAdd}>Agregar al carrito</button>
             </div>
         </>
     )

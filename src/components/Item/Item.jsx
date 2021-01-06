@@ -12,7 +12,7 @@ function Item({title, img, price}){
             </div>
             <div className="row">
                 <div className="col">
-                    <ItemCount stock={5} initial={1} />
+                    <ItemCount stock={5} initial={0} />
                 </div>
             </div>
 
