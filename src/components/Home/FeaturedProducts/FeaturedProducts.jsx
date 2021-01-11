@@ -54,7 +54,7 @@ function FeaturedProducts({greeting}){
         
         <>
                 <div className="container">
-                    <h1 className="mt-4">{greeting}</h1>
+                    <h2 className="mt-4">{greeting}</h2>
                     <div className="row">
                     {
                         items.length ?
@@ -62,7 +62,7 @@ function FeaturedProducts({greeting}){
                             <div className="col-md-3 mb-4 mr-5">
                                     <Item title={item.title} img={item.img} price={item.price}/>
                             </div>
-                        )): <p className="cargando">Cargando items...</p>
+                        )): <p className="cargando ml-3">Cargando items...</p>
                     }
 
                     </div>

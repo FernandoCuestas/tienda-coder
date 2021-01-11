@@ -1,13 +1,22 @@
+import {useState} from 'react';
 import CartIcon from '../CartIcon/CartIcon';
 import {Link} from 'react-router-dom';
+import IconMenu from '../../assets/icon.png';
+import WidgetCart from '../WidgetCart/WidgetCart';
 
-function NavBar() {
+const NavBar = () => {
+    const [showWidgetCart, setShowWidgetCart] = useState(false);
+
+    const openWidgetCart = () => {
+        setShowWidgetCart(!showWidgetCart); 
+}
   return (
     <>
         <div className="container-fluid">
             <nav className="navbar shadow navbar-expand-lg navbar-dark bg-dark">
-                {/* <a className="navbar-brand" href="#">Akihabara Store</a> */}
-                <Link className="navbar-brand" to="/">Akihabara Store</Link>
+                <Link className="navbar-brand" to="/">
+                    <img src={IconMenu} alt="IconMenu" width="50" height="50"/>
+                </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
                 </button>
@@ -26,9 +35,8 @@ function NavBar() {
                         <Link className="nav-link" to="/category/Ecchi">Ecchi</Link>
                         </li>
                     </ul>
-                    <CartIcon/>
-                    
-                 
+                    <CartIcon action={openWidgetCart}/>
+                    <WidgetCart show={showWidgetCart} action={openWidgetCart} />
                 </div>
             </nav>
         </div>

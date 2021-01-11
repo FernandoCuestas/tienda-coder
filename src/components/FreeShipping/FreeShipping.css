@@ -1,0 +1,10 @@
+.free_shipping {
+  background: grey;
+  padding: 1rem 0;
+  text-align: center;
+  color: #ffc107 !important;
+  font-size: 1.2rem;
+}
+.free_shipping p{
+  margin: 0px !important;
+}

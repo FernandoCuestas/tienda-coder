@@ -1,0 +1,31 @@
+.socialMediaLinks a {
+    font-size: 26px;
+    margin: 0 10px 0 0;
+    color: #000000;
+    text-decoration: none;
+}
+.socialMediaLinks{
+    text-align: center;
+    padding: 10px 0px;
+    background: gainsboro;
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    left: 0px;
+}
+
+.socialMediaLinks a.fa-twitter { 
+    color: #00aced;
+}
+.socialMediaLinks a.fa-facebook-f { 
+    color: #3b5998; 
+}
+.socialMediaLinks a.fa-pinterest { 
+    color: #C92228; 
+}
+.socialMediaLinks a.fa-instagram { 
+    color: #8a3ab9; 
+}
+.socialMediaLinks a.fa-google-plus-g { 
+    color: #d34836; 
+}

@@ -1,0 +1,8 @@
+.data-product{
+    display:flex;
+    margin-bottom:10px;
+}
+
+.data-product span{
+    display:block;
+}
