@@ -1,48 +1,24 @@
+import {useState, useEffect} from 'react';
 import Jujutsu from '../../../assets/jujutsu.png';
 import Naruto from '../../../assets/naruto.png';
 import Gantz from '../../../assets/gantz.png';
 import Item from '../../Item/Item';
-import {useState, useEffect} from 'react';
+import {getFirestore} from '../../../db';
 
 function FeaturedProducts({greeting}){
     const [items, setItems] = useState([]);
+    const db = getFirestore();
 
-    const products = [
-        {
-            id: 1,
-            title: 'Jujutsu Kaisen',
-            img: Jujutsu,
-            price: 400
-        },
-        {
-            id: 2,
-            title: 'Naruto',
-            img: Naruto,
-            price: 600
-        },
-        {
-            id: 4,
-            title: 'Gantz',
-            img: Gantz,
-            price: 300
-        },
-    ]
+    const getProducstFromDB = () => {
+        db.collection('productos').where("outstanding", "==", true).get()
+        .then(docs => {
+            let arr = [];
+            docs.forEach(doc => {
+                arr.push({id: doc.id, data: doc.data()})
+            })
 
-
-    const getProducts = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products);
-        }, 5000)
-    })
-
-    const getProducstFromDB = async () => {
-        try {
-            const result = await getProducts;
-            setItems(result);
-            alert('Se cargaron los productos');
-        } catch(error) {
-            alert('No podemos mostrar los productos en este momento');
-        }
+            setItems(arr);
+        }).catch(e => console.log(e));
     }
 
     useEffect(() => {
