@@ -75,6 +75,7 @@ var productos = [
   }
 ];
 
+
 productos.forEach((obj) => {
   db.collection("productos")
     .add({
