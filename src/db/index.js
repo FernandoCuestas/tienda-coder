@@ -2,18 +2,24 @@ import firebase from 'firebase/app';
 import '@firebase/firestore';
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyB_yxyb_VNb38Ov0lP46ioNUkWd3zsXNPg",
-  authDomain: "store-7e5f7.firebaseapp.com",
-  projectId: "store-7e5f7",
-  storageBucket: "store-7e5f7.appspot.com",
-  messagingSenderId: "480548003225",
-  appId: "1:480548003225:web:5e6de1db25ee3cb40ac708"
+  apiKey: "AIzaSyD496o83DGtb1XMdEO-z1fzR8vyOsy6KOI",
+  authDomain: "store-ece73.firebaseapp.com",
+  projectId: "store-ece73",
+  storageBucket: "store-ece73.appspot.com",
+  messagingSenderId: "866141875666",
+
 });
 
 export function getFirebase() {
-    return app;
+    if (!firebase.apps.length) {
+        return app;
+    }else {
+        return firebase.app(); 
+    }
+    
 }
 
 export function getFirestore() {
     return firebase.firestore(app);
 }
+

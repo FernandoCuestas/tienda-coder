@@ -2,9 +2,12 @@ const firebase = require('firebase');
 require("firebase/firestore");
 
 firebase.initializeApp({
-  apiKey: "AIzaSyB_yxyb_VNb38Ov0lP46ioNUkWd3zsXNPg",
-  authDomain: "store-7e5f7.firebaseapp.com",
-  projectId: "store-7e5f7",
+  apiKey: "AIzaSyD496o83DGtb1XMdEO-z1fzR8vyOsy6KOI",
+  authDomain: "store-ece73.firebaseapp.com",
+  projectId: "store-ece73",
+  storageBucket: "store-ece73.appspot.com",
+  messagingSenderId: "866141875666",
+  appId: "1:866141875666:web:564327271990e988202c0b"
 });
 
 var db = firebase.firestore();
@@ -12,65 +15,65 @@ var db = firebase.firestore();
 var productos = [
   {
     "id": 1,
-    "price": "400",
+    "price": 400,
     "title": "Bleach",
-    "img": "./src/assets/Bleach.png"
+    "img": "Bleach.png"
 
   },
   {
     "id": 2,
-    "price": "400",
+    "price": 400,
     "title": "Gantz zero",
-    "img": "./src/assets/Gantz-zero.png"
+    "img": "Gantz-zero.png"
 
   },
   {
     "id": 3,
-    "price": "200",
+    "price": 200,
     "title": "One piece",
-    "img": "./src/assets/One-piece.png"
+    "img": "One-piece.png"
 
   },
   {
     "id": 4,
-    "price": "410",
+    "price": 410,
     "title": "One Punch",
-    "img": "./src/assets/One-Punch.png"
+    "img": "One-Punch.png"
 
   },
   {
     "id": 5,
-    "price": "310",
+    "price": 310,
     "title": "Boku no Hero",
-    "img": "./src/assets/Boku-hero.png"
+    "img": "Boku-hero.png"
 
   },
   {
     "id": 6,
-    "price": "400",
+    "price": 400,
     "title": "Bleach ichigo",
-    "img": "./src/assets/Bleach-ichigo.png"
+    "img": "Bleach-ichigo.png"
 
   },
   {
     "id": 7,
-    "price": "400",
+    "price": 400,
     "title": "Naturo gaara",
-    "img": "./src/assets/Naturo-gaara.png"
+    "img": "Naturo-gaara.png"
 
   },
   {
     "id": 8,
-    "price": "400",
+    "price": 400,
     "title": "Evangelion",
-    "img": "./src/assets/Evangelion.png"
+    "img": "Evangelion.png"
 
   },
   {
     "id": 9,
-    "price": "400",
+    "price": 400,
     "title": "Evangelion shikari",
-    "img": "./src/assets/Evangelion-shikari.png"
+    "img": "Evangelion-shikari.png"
 
   }
 ];

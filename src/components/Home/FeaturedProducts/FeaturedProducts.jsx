@@ -1,7 +1,4 @@
 import {useState, useEffect} from 'react';
-import Jujutsu from '../../../assets/jujutsu.png';
-import Naruto from '../../../assets/naruto.png';
-import Gantz from '../../../assets/gantz.png';
 import Item from '../../Item/Item';
 import {getFirestore} from '../../../db';
 
@@ -10,13 +7,15 @@ function FeaturedProducts({greeting}){
     const db = getFirestore();
 
     const getProducstFromDB = () => {
-        db.collection('productos').where("outstanding", "==", true).get()
+        db.collection('productos').where("price", ">", 100).get()
         .then(docs => {
+
             let arr = [];
             docs.forEach(doc => {
-                arr.push({id: doc.id, data: doc.data()})
+                arr.push({id: doc.id, img: doc.data().img, price: doc.data().price, title: doc.data().title})
+                // arr.push({id: doc.id, data: doc.data()})
             })
-
+        
             setItems(arr);
         }).catch(e => console.log(e));
     }

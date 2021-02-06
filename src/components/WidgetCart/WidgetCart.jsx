@@ -5,7 +5,7 @@ import ItemContent from '../ItemContent/ItemContent';
 import Empty from '../../assets/empty.png';
 
 const WidgetCart = ({show, action}) => {
-    const [data, setData] = useContext(Store);
+    const [data] = useContext(Store);
 
     return (
         <div className={`widgetCart ${show ? 'open' : 'close'}`}>
@@ -15,7 +15,7 @@ const WidgetCart = ({show, action}) => {
                 
             }
             {
-                data.items.length == "" ?
+                data.items.length === "" ?
                 <img src={Empty} alt="Vacio" width="330"/> 
                 : <p></p>
             }
