@@ -38,14 +38,23 @@ const Checkout = () => {
         })
         .catch(e => console.log(e));
     }
+    var total = 0;
 
     return (
         <section className="checkout">
             <div className="container">
                 <h2 className="text-left">Checkout</h2>
                 {
-                    venta ?
-                    <p></p>: data.items.map(item => <ItemContent title={item.title} img={item.img} price = {item.price} cantidad={item.cantidad}/>) 
+                    !venta ?
+                    data.items.map((item) => {
+                        total = total + (item.price * item.cantidad);
+                        return <ItemContent key={item.id} title={item.title} img={item.img} price = {item.price} cantidad={item.cantidad}/>
+            
+                    }):<p></p>
+                    
+                }
+                {
+                    <p>TOTAL: ${total}</p>
                 }
                 {
                     !venta ?
