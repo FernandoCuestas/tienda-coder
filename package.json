@@ -1,7 +1,5 @@
 {
   "name": "ecommerce",
-  "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@firebase/firestore": "^2.1.5",
     "@testing-library/jest-dom": "^5.11.6",
