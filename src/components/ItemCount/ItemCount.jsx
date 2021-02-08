@@ -1,9 +1,9 @@
-import { useEffect, useState, useContext} from 'react';
+import { useState, useContext} from 'react';
 import {Store} from '../../Store';
 import {useHistory} from 'react-router-dom';
 
-function ItemCount({stock, initial, item}){
-    const history = useHistory();
+function ItemCount({initial, item}){
+  
     const [data, setData] = useContext(Store);
     const [qty, setQty] = useState(initial);
 

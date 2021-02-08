@@ -1,5 +1,5 @@
 import {useEffect, useState, useContext} from 'react';
-import {useParams, Link} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import ProductDetail from './ProductDetail';
 import Comments from './Comments';
 import {Store} from '../../Store';
@@ -7,13 +7,13 @@ import './Detail.css';
 import {getFirestore} from '../../db';
 
 const Detail = () => {
-    const {id} = useParams();
+    const {query} = useParams();
     const [product, setProduct] = useState(null);
-    const [data, setData] = useContext(Store);
+    
     const db = getFirestore();
 
     useEffect(() => {
-        db.collection('productos').doc(id).get()
+        db.collection('productos').doc(query).get()
         .then(doc => {
             if(doc.exists) {
                 setProduct({id: doc.id, data: doc.data()});

@@ -13,16 +13,19 @@ const Category = () => {
         switch (category_name){
             case 'Shonen':
                 setManga(Hunter);
-            break;
+                break;
             case 'Gore':
                 setManga(Tokyo);
-            break;
+                break;
             case 'Cyberpunk':
                 setManga(Alitta);
-            break;
+                break;
             case 'Ecchi':
                 setManga(Dxd);
-            break;
+                break;
+            default:
+                setManga(Dxd);
+            
         }
         
     }, [category_name])
