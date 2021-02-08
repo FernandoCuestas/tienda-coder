@@ -9,7 +9,7 @@ const ProductDetail = ({item}) => {
     const [data, setData] = useContext(Store);
     const [qty, setQty] = useState(1);	
     const db = getFirestore();
-
+    var remera = require('../../assets/'+item.data.img);
     const handleClickResta = () => {	
         if(qty > 1) {	
             setQty(qty - 1);	
@@ -20,11 +20,11 @@ const ProductDetail = ({item}) => {
         setData({
             ...data, 
             cantidad: data.cantidad + qty,
-            items: [...data.items, {item: item.data, cantidad: qty}],
-            precioTotal: data.precioTotal + (item.data.price * qty)
+            items: [...data.items, {item: item.data, cantidad: qty,price:item.data.price,title:item.data.title,img:remera.default}],
+            precioTotal: 100
         });
-
-        history.push('/cart');
+        console.log(item);
+        // history.push('/cart');
         // alert(`Agregaste ${qty} productos al carrito`);	
     }
     
@@ -35,7 +35,7 @@ const ProductDetail = ({item}) => {
         .then(() => console.log('Se actualizó correctamente'))
         .catch(error => console.log(error));
     }
-    var remera = require('../../assets/'+item.data.img);
+    
     return (
         <article className="product">
             <div className="foto">
@@ -50,18 +50,18 @@ const ProductDetail = ({item}) => {
                 <p className="price">${item.data.price}</p>
 
                 <div className="qty">	
-                    <button className="btn"
+                    <button className="btn-hover-add"
                         disabled={qty === 1 ? 'disabled' : null } 	
                         onClick={handleClickResta}	
                     >	
                         -	
                     </button>	
                     <input type="text" value={qty} readOnly/>	
-                    <button onClick={() => setQty(qty + 1)}>+</button>	
+                    <button className="btn-hover-add" onClick={() => setQty(qty + 1)}>+</button>	
                 </div>
 
-                <button className="btn" onClick={onAdd}>Agregar al carrito</button>
-                <button className="btn" onClick={handleUpdatePrice}>Actualizar precio</button>
+                <button className="btn btn-hover-add" onClick={onAdd}>Agregar al carrito</button>
+                {/* <button className="btn btn-hover-add" onClick={handleUpdatePrice}>Actualizar precio</button> */}
             </div>
         </article>
     )

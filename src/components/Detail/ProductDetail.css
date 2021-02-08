@@ -10,7 +10,7 @@
 
 .product .info .title {
   font-size: 3rem;
-  color: var(--color-secundario);
+  color: grey;
   margin-bottom: 1.5rem;
 }
 
@@ -23,7 +23,7 @@
 .product .info .price {
   font-size: 2.5rem;
   font-weight: 600;
-  color: var(--text);
+  color: black;
   margin-bottom: 2rem;
 }
 
@@ -39,7 +39,7 @@
   padding: 0.5rem;
   outline: none;
   cursor: pointer;
-  background: var(--color-principal);
+  background: greenyellow;
   border-radius: 1rem;
   color: var(--blanco);
   font-size: 1.5rem;
@@ -61,13 +61,13 @@
 }
 
 .product .btn {
-  width: 150px;
+
   display: block;
   border: none;
   padding: 1rem;
   outline: none;
   cursor: pointer;
-  background: var(--color-principal);
+  background: greenyellow;
   border-radius: 1rem;
   color: var(--blanco);
   font-size: 1.5rem;

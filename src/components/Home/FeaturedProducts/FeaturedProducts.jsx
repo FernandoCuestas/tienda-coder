@@ -7,7 +7,7 @@ function FeaturedProducts({greeting}){
     const db = getFirestore();
 
     const getProducstFromDB = () => {
-        db.collection('productos').where("price", ">", 100).get()
+        db.collection('productos').where("price", ">", 10).get()
         .then(docs => {
 
             let arr = [];
@@ -31,11 +31,12 @@ function FeaturedProducts({greeting}){
                 <div className="container">
                     <h2 className="mt-4">{greeting}</h2>
                     <div className="row">
+                        {console.log(items)}
                     {
                         items.length ?
                         items.map((item, index) => (
                             <div className="col-md-3 mb-4 mr-5" key={index}>
-                                    <Item title={item.title} img={item.img} price={item.price}/>
+                                    <Item id={item.id} title={item.title} img={item.img} price={item.price}/>
                             </div>
                         )): <p className="cargando ml-3">Cargando items...</p>
                     }

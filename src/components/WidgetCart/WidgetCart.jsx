@@ -35,11 +35,11 @@ const WidgetCart = ({show, action}) => {
 
             {
                     data.items.length ?
-                    <Link className="btn btn-success" to="/checkout">Finalizar compra</Link>:<br/>
+                    <Link className="btn btn-success centrado" to="/checkout">Finalizar compra</Link>:<br/>
             }
              
             <br/>
-            <button className="btn btn-warning" onClick={action}>Cerrar</button>
+            <button className="btn btn-warning centrado" onClick={action}>Cerrar</button>
         </div>
     )
 }

@@ -86,7 +86,7 @@ body::-webkit-scrollbar-thumb {
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 #ffc107;
+  box-shadow: 0 8px 16px 0 greenyellow;
 }
 
 .btn-hover-add:hover {
@@ -101,5 +101,5 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nav-link {
-  text-shadow: 2px 2px 5px #ffc107;
+  text-shadow: 2px 2px 5px yellowgreen;
 }
