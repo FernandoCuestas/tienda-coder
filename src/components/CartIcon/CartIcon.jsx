@@ -8,7 +8,7 @@ const CartIcon = ({action}) => {
     return (
         <div className="navCart" onClick={action}>
             <i className="fas fa-shopping-cart text-white mr-5"></i>
-            <span className="xxx">{data.cantidad}</span>
+            <span>{data.cantidad}</span>
         </div>
     )
 }
