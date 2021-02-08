@@ -22,7 +22,8 @@ function ItemCount({stock, initial, item}){
             cantidad: data.cantidad + qty,
             items: [...data.items, item]
         });
-        history.push('/cart');
+        // history.push('/cart');
+        setQty(0)
     }
 
     return(

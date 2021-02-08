@@ -34,7 +34,7 @@ function FeaturedProducts({greeting}){
                     {
                         items.length ?
                         items.map((item, index) => (
-                            <div className="col-md-3 mb-4 mr-5">
+                            <div className="col-md-3 mb-4 mr-5" key={index}>
                                     <Item title={item.title} img={item.img} price={item.price}/>
                             </div>
                         )): <p className="cargando ml-3">Cargando items...</p>

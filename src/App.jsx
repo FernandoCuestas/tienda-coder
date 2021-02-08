@@ -8,6 +8,7 @@ import Category from './components/Category';
 import FreeShipping from './components/FreeShipping';
 import Footer from './components/Footer';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout';
 import {Store} from './Store';
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     items: [],
     cantidad: 0,
     freeShipping: 4000,
-    cuotas: 3
+    cuotas: 3,
+    precioTotal: 0,
   })
   return (
     <Store.Provider value={[data, setData]}>
@@ -28,6 +30,9 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/checkout">
+              <Checkout />
             </Route>
             <Route path="/detail/:id">
               <Detail />
