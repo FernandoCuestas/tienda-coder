@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 import {getFirestore} from '../../db';
 
 const ProductDetail = ({item}) => {
-  
+    const history = useHistory();
     const [data, setData] = useContext(Store);
     const [qty, setQty] = useState(1);	
     const db = getFirestore();
@@ -23,18 +23,18 @@ const ProductDetail = ({item}) => {
             items: [...data.items, {item: item.data, cantidad: qty,price:item.data.price,title:item.data.title,img:remera.default}],
             precioTotal: 100
         });
-        console.log(item);
+        
         // history.push('/cart');
         // alert(`Agregaste ${qty} productos al carrito`);	
     }
     
-    // const handleUpdatePrice = () => {
-    //     db.collection('productos').doc(item.id).update({
-    //         price: 100,
-    //     })
-    //     .then(() => console.log('Se actualizó correctamente'))
-    //     .catch(error => console.log(error));
-    // }
+    const handleUpdatePrice = () => {
+        db.collection('productos').doc(item.id).update({
+            price: 100,
+        })
+        .then(() => console.log('Se actualizó correctamente'))
+        .catch(error => console.log(error));
+    }
     
     return (
         <article className="product">

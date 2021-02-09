@@ -7,13 +7,13 @@ import './Detail.css';
 import {getFirestore} from '../../db';
 
 const Detail = () => {
-    const {query} = useParams();
+    const {id} = useParams();
     const [product, setProduct] = useState(null);
-    
+    const [data, setData] = useContext(Store);
     const db = getFirestore();
 
     useEffect(() => {
-        db.collection('productos').doc(query).get()
+        db.collection('productos').doc(id).get()
         .then(doc => {
             if(doc.exists) {
                 setProduct({id: doc.id, data: doc.data()});
